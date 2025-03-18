@@ -1,6 +1,5 @@
 from fastapi import FastAPI, Query
 import random
-import uvicorn
 
 app = FastAPI()
 
@@ -31,5 +30,4 @@ def get_money_quote(api_key: str = Query(None)):
     #     return {"error": "Invalid API key"}
     return {"money_quote": random.choice(money_quotes)}
 
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+
